@@ -37,7 +37,7 @@ public class BodyActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     TextView tvBody , tvShowComments;
     String body = "";
-    String id = "";
+    String id ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,17 +49,17 @@ public class BodyActivity extends AppCompatActivity {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.setProgress(0);
 
+        Intent intent = getIntent();
+        if(intent != null ){
+            body = intent.getStringExtra(MainActivity.EXTRA_BODY);
+            id = intent.getStringExtra(MainActivity.EXTRA_ID );
+        }
+
         mRetrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         mApiInterface = mRetrofit.create(ApiInterface.class);
-
-        Intent intent = getIntent();
-        if(intent != null ){
-            body = intent.getStringExtra(MainActivity.EXTRA_BODY);
-            id = intent.getStringExtra(MainActivity.EXTRA_ID);
-        }
 
         tvBody = findViewById(R.id.tv_body);
         tvBody.setText(Html.fromHtml("<b> Post: </b>" + body));

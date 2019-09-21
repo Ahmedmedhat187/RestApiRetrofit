@@ -33,6 +33,7 @@ public class CommentAdapter  extends RecyclerView.Adapter<CommentAdapter.ViewHol
         holder.name.setText(mCommentLists.get(position).getName());
         holder.email.setText(mCommentLists.get(position).getEmail());
         holder.comment.setText(mCommentLists.get(position).getText());
+        holder.postId.setText(mCommentLists.get(position).getPostId());
     }
 
     @Override
@@ -54,12 +55,14 @@ public class CommentAdapter  extends RecyclerView.Adapter<CommentAdapter.ViewHol
         TextView name;
         TextView email;
         TextView comment;
+        TextView postId;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             id = itemView.findViewById(R.id.tv_comment_id);
             name = itemView.findViewById(R.id.tv_comment_name);
             email = itemView.findViewById(R.id.tv_comment_email);
             comment = itemView.findViewById(R.id.tv_comment_comment);
+            postId = itemView.findViewById(R.id.tv_post_id);
         }
     }
 

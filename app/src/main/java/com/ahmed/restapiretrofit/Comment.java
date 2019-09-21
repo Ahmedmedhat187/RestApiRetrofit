@@ -13,9 +13,7 @@ public class Comment {
     @SerializedName("body")
     String text;
 
-    public String getPostId() {
-        return postId;
-    }
+    public String getPostId() { return postId; }
 
     public String getId() {
         return id;
@@ -25,9 +23,7 @@ public class Comment {
         return title;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public String getEmail() {
         return email;

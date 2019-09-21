@@ -34,6 +34,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.postId.setText("PostID: " + mPostList.get(position).getId());
         holder.id.setText("User ID: " + mPostList.get(position).getUserId());
         holder.title.setText("Title: " + mPostList.get(position).getTitle());
     }
@@ -65,10 +66,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView id;
         TextView title;
+        TextView postId;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             id = itemView.findViewById(R.id.tv_id);
             title = itemView.findViewById(R.id.tv_title);
+            postId = itemView.findViewById(R.id.tv_post_id);
             itemView.setOnClickListener(this);
         }
         @Override

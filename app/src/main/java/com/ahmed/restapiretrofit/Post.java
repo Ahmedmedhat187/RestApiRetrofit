@@ -11,13 +11,12 @@ public class Post {
     @SerializedName("body")
     String topic;
 
+
     public String getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
+    public void setUserId(String userId) { this.userId = userId; }
 
     public String getId() {
         return id;
@@ -31,10 +30,7 @@ public class Post {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
+    public void setTitle(String title) { this.title = title; }
 
     public String getTopic() {
         return topic;

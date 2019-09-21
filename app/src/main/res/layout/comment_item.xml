@@ -22,12 +22,25 @@
                 android:layout_marginRight="10dp"
                 android:textStyle="italic|bold"
                 android:textColor="#B4BAC0"
+                android:text="Post ID: "
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/tv_post_id"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_marginRight="10dp"
+                android:textStyle="italic|bold"
+                android:textColor="#B4BAC0"
                 android:text="Comment ID: "
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent" />
             <TextView
+                android:layout_weight="1"
                 android:id="@+id/tv_comment_id"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent" />
         </LinearLayout>
 

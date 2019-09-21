@@ -4,6 +4,7 @@ import java.util.Map;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 
 public interface ApiInterface {
@@ -14,7 +15,14 @@ public interface ApiInterface {
     @GET("posts")
     Call<List<Post>> getPosts(@QueryMap Map<String , String> parameters);
 
+
+/*
     @GET("posts/{id}/comments")
-    Call<List<Comment>> getComments(@Path("id") String userId);
+    Call<List<Comment>> getComments(@Path("id") int postId);
+*/
+    @GET("comments")
+    Call<List<Comment>> getComments(@Query("postId") String postId);
+
+
 
 }

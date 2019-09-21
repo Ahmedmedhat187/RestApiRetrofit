@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -24,6 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity  implements PostAdapter.ItemClickListener{
 
+    private static final String TAG = "MainActivity";
     private final String BASE_URL = "https://jsonplaceholder.typicode.com/";
     public static String EXTRA_BODY = "body";
     public static String EXTRA_ID = "id";
@@ -132,7 +134,8 @@ public class MainActivity extends AppCompatActivity  implements PostAdapter.Item
     public void onItemClickListener(int itemId) {
         Intent intent = new Intent(this , BodyActivity.class);
         intent.putExtra(EXTRA_BODY , mPostAdapter.getPostList().get(itemId).getTopic());
-        intent.putExtra(EXTRA_ID , mPostAdapter.getPostList().get(itemId).getId());
+        intent.putExtra(EXTRA_ID , mPostAdapter.getPostList().get(itemId).getId().toString());
+        Log.e(TAG ,  mPostAdapter.getPostList().get(itemId).getId());
         startActivity(intent);
     }
 
